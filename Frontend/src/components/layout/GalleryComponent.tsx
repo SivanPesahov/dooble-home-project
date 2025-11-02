@@ -66,7 +66,7 @@ function Photo({ src, alt, text, className }: props) {
           src={src}
           alt={alt}
           role="img"
-          className="block w-[132.7px] sm:w-[343px] h-[135.11px] sm:h-full sm:max-h-[282.01px] object-cover"
+          className="block min-w-[132.7px] sm:w-[343px] h-[135.11px] sm:h-full sm:max-h-[282.01px] object-cover"
         />
       </div>
       <p
@@ -125,7 +125,7 @@ function GalleryComponent() {
           src="/images/gallery/camera.png"
           alt="מצלמה חקלאית"
           role="img"
-          className="w-[375px] sm:w-[727px] h-[334px] sm:h-[545px] block object-cover object-[35%_40%] fade-right"
+          className="w-full sm:w-[727px] h-[334px] sm:h-[545px] block object-cover object-[35%_40%] fade-right"
         />
       </section>
     </section>

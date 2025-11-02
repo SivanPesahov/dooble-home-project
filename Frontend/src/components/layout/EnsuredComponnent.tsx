@@ -11,7 +11,7 @@ type ItemProps = {
 function Item({ number, text, src, alt }: ItemProps) {
   return (
     <section
-      className="w-[375px] sm:w-full sm:h-full h-[486px] flex flex-col justify-between items-end my-8 sm:my-0 sm:py-0 bg-[#F0EEF4] sm:gap-20"
+      className="min-w-[375px] w-full sm:h-full h-[486px] flex flex-col justify-between items-end my-8 sm:my-0 sm:py-0 bg-[#F0EEF4] sm:gap-20"
       aria-labelledby={`item-title-${number}`}
     >
       <div className=" h-[103px] flex flex-col justify-end items-end border-r-1 border-[#452A7A]/20 mx-4 sm:mx-0 px-4 sm:px-18">
@@ -32,7 +32,7 @@ function Item({ number, text, src, alt }: ItemProps) {
           src={src}
           alt={alt}
           role="img"
-          className="w-full h-[305px] sm:w-full sm:h-full object-cover"
+          className="w-full min-h-[305px] sm:h-full object-cover"
         />
       </div>
     </section>

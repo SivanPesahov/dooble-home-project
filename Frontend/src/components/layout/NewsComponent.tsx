@@ -33,7 +33,7 @@ function Item({ src, alt, isMobile }: ItemProps) {
           src={src}
           alt={alt}
           role="img"
-          className="w-[147px] h-[100.88px] sm:w-[204px] sm:h-[140px] rounded-sm"
+          className="min-w-[147px] h-[100.88px] sm:w-[204px] sm:h-[140px] rounded-sm"
         />
       </div>
     </section>
@@ -43,7 +43,7 @@ function Item({ src, alt, isMobile }: ItemProps) {
 function MainItem({ src, alt, isMobile }: ItemProps) {
   return (
     <section
-      className="w-[334.97px] h-[221.18px] sm:w-full sm:max-w-[839px] sm:h-[554px]"
+      className="min-w-[334.97px] h-[221.18px] sm:w-full sm:max-w-[839px] sm:h-[554px]"
       aria-label="כתבת חדשות מרכזית"
     >
       <div className="relative rounded-md sm:rounded-none overflow-hidden">

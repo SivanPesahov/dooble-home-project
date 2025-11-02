@@ -92,9 +92,9 @@ function Sidebar() {
 
 function MainSection() {
   return (
-    <div className=" text-white text-right pt-6 w-[375px]  sm:w-full sm:pr-56 sm:pt-32">
+    <div className=" text-white text-right pt-6 w-full min-w-[375px] mr-[10vw] sm:mr-[0] sm:pr-[12vw] sm:pt-[12vh]">
       <section
-        className="flex flex-col items-end space-y-7 w-[360px] sm:w-full pt-4 sm:space-y-4"
+        className="flex flex-col items-end space-y-7 w-full min-w-[375px] pt-4 sm:space-y-4"
         aria-labelledby="hero-heading"
       >
         <img
@@ -125,7 +125,7 @@ function MainSection() {
           <p className="px-2 font-bold">לפרטים נוספים</p>
         </button>
       </section>
-      <span className="flex justify-center items-center pt-34 sm:pt-36 sm:pl-56 pr-30 sm:pr-0">
+      <span className="flex justify-center items-center pt-34 sm:pt-36 sm:pl-56 pr-20 sm:pr-0">
         <span className="sm:hidden" aria-hidden="true">
           {SmallBubble}
         </span>
@@ -157,7 +157,7 @@ function HeroComponnent() {
   return (
     <div>
       <section
-        className=" relative w-full sm:h-[662px] h-[667px] bg-no-repeat bg-[length:480%_210%] bg-[left_79.5%_top_60%] sm:bg-[40%_60%] sm:bg-[length:100%_200%] text-white"
+        className=" relative w-full min-w-[375px] sm:h-[662px] h-[667px] bg-no-repeat bg-[length:480%_210%] bg-[left_79.5%_top_60%] sm:bg-[40%_60%] sm:bg-[length:100%_200%] text-white"
         role="region"
         aria-label="אזור גיבור האתר"
         style={{ backgroundImage: "url('/images/main/main.png')" }}

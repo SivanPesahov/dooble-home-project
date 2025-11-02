@@ -31,7 +31,9 @@ function BigLeft({
           </h2>
         </div>
         <div className="flex py-10 space-x-8">
-          <span aria-hidden="true">{sunSvg}</span>
+          <span aria-hidden="true" className="flex justify-center items-center">
+            {sunSvg}
+          </span>
           <button
             type="button"
             onClick={() => setPressed((prev) => !prev)}
@@ -40,7 +42,7 @@ function BigLeft({
             {glassSvg}
           </button>
 
-          <h2 className="text-[#452A7A] text-xl font-bold flex gap-2">
+          <h2 className="text-[#452A7A] text-xl font-bold flex gap-2 justify-center items-center">
             English{" "}
             <div className="items-center flex justify-center">
               <span aria-hidden="true">{arrowSvg}</span>
