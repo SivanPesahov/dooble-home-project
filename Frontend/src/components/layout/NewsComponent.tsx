@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import { whiteArrow } from "../../svgs";
+import { useMobile } from "../../context/MobileContext";
 
 type ItemProps = {
   src: string;
@@ -43,7 +43,7 @@ function Item({ src, alt, isMobile }: ItemProps) {
 function MainItem({ src, alt, isMobile }: ItemProps) {
   return (
     <section
-      className="w-[334.97px] h-[221.18px] sm:w-[839px] sm:h-[554px]"
+      className="w-[334.97px] h-[221.18px] sm:w-full sm:max-w-[839px] sm:h-[554px]"
       aria-label="כתבת חדשות מרכזית"
     >
       <div className="relative rounded-md sm:rounded-none overflow-hidden">
@@ -74,7 +74,7 @@ function MainItem({ src, alt, isMobile }: ItemProps) {
 }
 
 function NewsComponent() {
-  const [isMobile, setIsMobile] = useState(false);
+  const { isMobile } = useMobile();
 
   const button = (
     <button
@@ -89,12 +89,6 @@ function NewsComponent() {
     </button>
   );
 
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   return (
     <section
       className="bg-white sm:px-[12vw] my-6 sm:my-0"

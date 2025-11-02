@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import { arrow } from "../../svgs";
+import { useMobile } from "../../context/MobileContext";
 
 type ItemProps = {
   src: string;
@@ -40,14 +40,8 @@ function Item({ number, text, src, alt }: ItemProps) {
 }
 
 function EnsuredComponnent() {
-  const [isMobile, setIsMobile] = useState(false);
+  const { isMobile } = useMobile();
 
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   return (
     <div className="bg-[#F0EEF4]" role="region" aria-label="ענפים מבוטחים">
       <section

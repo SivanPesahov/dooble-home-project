@@ -1,6 +1,8 @@
+import { useMobile } from "../../context/MobileContext";
 import { whiteArrow } from "../../svgs";
 
 function TextSection() {
+  const { isMobile } = useMobile();
   return (
     <section
       className="flex flex-col items-end text-right sm:w-[425px] sm:h-[298px]"
@@ -12,14 +14,25 @@ function TextSection() {
       >
         הגלרייה החקלאית
       </h1>
-      <p className="text-[20px] w-full h-[172px] pr-8 pl-6 sm:px-0 sm:py-4 text-[#333333] sm:text-[23px]">
-        תחרות ״הגלריה החקלאית״ של קנט חושפת
-        <br className="sm:hidden" /> לציבור הרחב את תרומתה הגדולה של
-        <br className="sm:hidden" /> החקלאות לפיתוחה של המדינה ואת
-        <br className="sm:hidden" /> יופיים המרהיב של החקלאות{" "}
-        <br className="hidden sm:block" />, הטבע <br className="sm:hidden" />{" "}
-        .והנוף בישראל
-      </p>
+      <div className="text-[20px] w-full h-[172px] pr-8 pl-6 sm:px-0 sm:py-4 text-[#333333] sm:text-[23px]">
+        {isMobile ? (
+          <p>
+            {" "}
+            תחרות ״הגלריה החקלאית״ של קנט חושפת
+            <br className="sm:hidden" /> לציבור הרחב את תרומתה הגדולה של
+            <br className="sm:hidden" /> החקלאות לפיתוחה של המדינה ואת
+            <br className="sm:hidden" /> יופיים המרהיב של החקלאות
+            <br className="hidden sm:block" />, הטבע{" "}
+            <br className="sm:hidden" /> .והנוף בישראל
+          </p>
+        ) : (
+          <p>
+            תחרות ״הגלריה החקלאית״ של קנט חושפת לציבור <br /> הרחב את תרומתה
+            הגדולה של החקלאות לפיתוחה <br /> ,של המדינה ואת יופיים המרהיב של
+            החקלאות <br /> .הטבע והנוף בישראל
+          </p>
+        )}
+      </div>
       <button
         type="button"
         aria-label="לצפייה בגלריה"
@@ -53,7 +66,7 @@ function Photo({ src, alt, text, className }: props) {
           src={src}
           alt={alt}
           role="img"
-          className="block w-[132.7px] sm:w-[343px] h-[135.11px] sm:h-[282.01px] object-cover"
+          className="block w-[132.7px] sm:w-[343px] h-[135.11px] sm:h-full sm:max-h-[282.01px] object-cover"
         />
       </div>
       <p
